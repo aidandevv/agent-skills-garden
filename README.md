@@ -12,6 +12,13 @@ project or global skill directory.
 |---|---|---|
 | [`journaling/`](./journaling/) | ✅ v2.0 | Dual-journal system for engineering decisions and product insights |
 
+**Inside `journaling/`:**
+
+| Skill | Writes To | What It Captures |
+|---|---|---|
+| [`engineering-journal`](./journaling/skills/engineering-journal/SKILL.md) | `docs/dev_journal.md` | Architecture decisions, implementation pivots, debugging lessons, constraints, verification results, and engineering milestones |
+| [`product-insight-journal`](./journaling/skills/product-insight-journal/SKILL.md) | `docs/product_insights.md` | User pain, UX friction, product hypotheses, positioning notes, roadmap trade-offs, trust risks, and growth or retention signals |
+
 ```mermaid
 flowchart LR
   Garden["agent-skills-garden"] --> Journaling["journaling/"]
@@ -21,6 +28,9 @@ flowchart LR
   Journaling --> Adapters["adapters/<br/>tool config"]
   Journaling --> Evals["evals/<br/>quality checks"]
   Journaling --> Docs["docs/<br/>examples"]
+
+  Skills --> EngSkill["engineering-journal"]
+  Skills --> ProductSkill["product-insight-journal"]
 ```
 
 ---

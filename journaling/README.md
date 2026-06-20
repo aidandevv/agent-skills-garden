@@ -34,6 +34,64 @@ journaling/
 
 ---
 
+## The Two Journals
+
+The journaling skill keeps engineering memory and product memory separate so
+each file stays useful to its audience. Engineering entries explain how the
+system changed. Product entries explain what a user, market, or roadmap signal
+means.
+
+| Skill | Output File | Primary Question | Typical Signals |
+|---|---|---|---|
+| [`engineering-journal`](./skills/engineering-journal/SKILL.md) | `docs/dev_journal.md` | What changed technically, and why? | Architecture decisions, pivots, refactors, debugging, test strategy, constraints, integrations |
+| [`product-insight-journal`](./skills/product-insight-journal/SKILL.md) | `docs/product_insights.md` | What did we learn about users, product value, or product risk? | UX friction, user pain, activation, retention, positioning, trust, roadmap, growth, feature hypotheses |
+
+The hook layer currently automates engineering checkpoint capture at session
+boundaries. Product insights are written by the product insight skill when the
+session contains product, UX, growth, onboarding, retention, roadmap, or
+user-facing work worth preserving.
+
+**Engineering example:**
+
+```markdown
+### [CP-DEBUG] | 2026-06-20: Duplicate Hook Entry Suppressed
+
+**Summary:** A Codex `Stop` event and `TaskCompleted` event were both writing
+entries for the same task. The hook now tracks transcript size per session so
+only new work is logged.
+
+**Evidence:** Replayed the event path and confirmed one journal entry.
+```
+
+**Product example:**
+
+```markdown
+### [PI-UX-FRICTION] | 2026-06-20: Setup Instructions Hide the Actual Payoff
+
+**Observation:** The README explains installation before showing what the
+journaling skill produces.
+
+**Why It Matters:** Readers evaluating the skill need to see the output shape
+before they decide whether the setup is worth it.
+
+**Hypothesis / Next Step:** If the README shows a compact example before the
+install path, more readers will understand the value without opening the skill
+files.
+```
+
+Some moments belong in both journals. If an engineering constraint changes the
+user experience, write one entry in each file and connect them with a
+`[CROSS-LOG]` marker.
+
+```mermaid
+flowchart LR
+  Constraint["Engineering constraint"] --> Dev["dev_journal.md<br/>root cause and trade-off"]
+  Constraint --> Product["product_insights.md<br/>user impact and product risk"]
+  Dev <-->|"[CROSS-LOG]"| Product
+```
+
+---
+
 ## Three-Layer Design
 
 ```
@@ -65,7 +123,9 @@ flowchart TB
   ClaudeAdapter --> Product
   CodexAdapter --> Eng
   CodexAdapter --> Product
-  SessionEnd --> DevJournal["docs/dev_journal.md"]
+  Eng --> DevJournal["docs/dev_journal.md"]
+  Product --> ProductJournal["docs/product_insights.md"]
+  SessionEnd --> DevJournal
   PreCompact --> DevJournal
   PostCompact --> DevJournal
   CodexStop --> DevJournal

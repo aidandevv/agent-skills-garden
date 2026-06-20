@@ -31,3 +31,20 @@
 **Follow-ups:** None identified.
 
 ---
+
+### [CP-MILESTONE] | 2026-06-20: Journaling Skill Roles Made Visible in READMEs
+
+**Summary:** Added a compact root README subtable for the engineering and product journal skills, then expanded `journaling/README.md` with a dedicated two-journal explanation, examples, and cross-log diagram.
+
+**Files/Modules Affected:** `README.md`, `journaling/README.md`, `docs/dev_journal.md`, `docs/product_insights.md`.
+
+**Key Trade-off:** Kept the root README concise for portfolio scanning while moving the fuller examples and operational nuance into the journaling README.
+
+**Evidence:** Verified the markdown diff and Mermaid fences with `git diff -- README.md journaling/README.md` and `rg` checks for journal skill links, Mermaid blocks, and output-file references.
+
+**Follow-ups:** None identified.
+
+> **[CROSS-LOG]** Product-facing README clarity logged in `./docs/product_insights.md`
+> — see [PI-POSITIONING] | 2026-06-20: Journal Roles Need to Be Visible Before Installation.
+
+---
