@@ -17,3 +17,17 @@
 **Follow-ups:** GitHub may retain server-side unreachable objects for a period after force-push; contact GitHub support if the artifact must be purged from provider backups or caches.
 
 ---
+
+### [CP-MILESTONE] | 2026-06-20: README Research Section Reframed for GitHub
+
+**Summary:** Reworked the root README presentation so the implemented skill is the only visible garden entry, the research foundation opens with an executive summary, and the detailed source list is collapsible with source titles carrying the links.
+
+**Files/Modules Affected:** `README.md`, `docs/dev_journal.md`.
+
+**Key Trade-off:** Kept the detailed research bibliography intact for credibility while moving it behind a GitHub-supported disclosure block so the README reads cleaner on first pass.
+
+**Evidence:** Verified the markdown structure with `sed`, `git diff -- README.md`, and `rg` checks for `travel`, `Research Foundation`, `<details>`, and `</details>`.
+
+**Follow-ups:** None identified.
+
+---
