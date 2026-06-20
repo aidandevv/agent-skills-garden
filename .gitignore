@@ -1,0 +1,9 @@
+# Journal system runtime files — generated, not committed
+docs/eval_report.md
+.claude/logs/
+.codex/logs/
+/tmp/codex-journal-*.cache
+handoff.md
+
+# OS cruft
+.DS_Store
