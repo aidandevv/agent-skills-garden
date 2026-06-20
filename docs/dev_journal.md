@@ -48,3 +48,20 @@
 > — see [PI-POSITIONING] | 2026-06-20: Journal Roles Need to Be Visible Before Installation.
 
 ---
+
+### [CP-MILESTONE] | 2026-06-20: README Skill Presentation Shifted to Abstract Blocks
+
+**Summary:** Reworked the README skill presentation from catalog/table-first into block-style explanations, with `journaling/` framed as a live project-memory layer and the two subskills described as nested decision/insight logs.
+
+**Files/Modules Affected:** `README.md`, `journaling/README.md`, `docs/dev_journal.md`, `docs/product_insights.md`.
+
+**Key Trade-off:** Preserved scan-friendly metadata tables where useful, but moved the motivation and value proposition into prose blocks so the public README flows more like an authored portfolio artifact.
+
+**Evidence:** Read back the top sections of both READMEs and reviewed `git diff -- README.md journaling/README.md`.
+
+**Follow-ups:** None identified.
+
+> **[CROSS-LOG]** Product-facing positioning change logged in `./docs/product_insights.md`
+> — see [PI-POSITIONING] | 2026-06-20: Journaling Should Read Like a Live Memory Layer.
+
+---

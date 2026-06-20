@@ -8,16 +8,30 @@ project or global skill directory.
 
 ## Skills in This Garden
 
-| Skill | Status | Description |
+### [`journaling/`](./journaling/) — live project memory for agents
+
+> A zero-effort way to preserve design, engineering, and product reasoning as
+> work happens. The journaling skill gives agents a continuous live document
+> they can write to during long sessions, so architecture decisions,
+> implementation trade-offs, debugging lessons, and product insights are easy
+> to recover later for write-ups, mock-ups, product pitches, retrospectives,
+> and portfolio stories.
+
+| Status | Creates | Best For |
 |---|---|---|
-| [`journaling/`](./journaling/) | ✅ v2.0 | Dual-journal system for engineering decisions and product insights |
+| ✅ v2.0 | `docs/dev_journal.md` + `docs/product_insights.md` | Remembering why choices were made, not just what code changed |
 
 **Inside `journaling/`:**
 
-| Skill | Writes To | What It Captures |
-|---|---|---|
-| [`engineering-journal`](./journaling/skills/engineering-journal/SKILL.md) | `docs/dev_journal.md` | Architecture decisions, implementation pivots, debugging lessons, constraints, verification results, and engineering milestones |
-| [`product-insight-journal`](./journaling/skills/product-insight-journal/SKILL.md) | `docs/product_insights.md` | User pain, UX friction, product hypotheses, positioning notes, roadmap trade-offs, trust risks, and growth or retention signals |
+> **[`engineering-journal`](./journaling/skills/engineering-journal/SKILL.md)**
+> writes to `docs/dev_journal.md` and captures architecture decisions,
+> implementation pivots, debugging lessons, constraints, verification results,
+> and engineering milestones.
+
+> **[`product-insight-journal`](./journaling/skills/product-insight-journal/SKILL.md)**
+> writes to `docs/product_insights.md` and captures user pain, UX friction,
+> product hypotheses, positioning notes, roadmap trade-offs, trust risks, and
+> growth or retention signals.
 
 ```mermaid
 flowchart LR

@@ -1,8 +1,18 @@
 # journaling/
 
 A self-contained dual-journal system for capturing engineering decisions and
-product insights during agentic coding sessions. Drop this folder into any
-project or reference it from `~/.claude/skills/` or `~/.codex/skills/`.
+product insights during agentic coding sessions.
+
+> **Abstract:** `journaling/` is a live project-memory layer for agents. It
+> gives Claude Code, Codex, and other skill-compatible tools a structured place
+> to record design and engineering decisions, product insights, pivots,
+> trade-offs, and verification evidence as work happens. The goal is
+> zero-effort recall: when it is time to write a case study, mock up a product
+> story, prepare a pitch, explain a technical decision, or review what changed
+> across a long build session, the reasoning is already captured.
+
+Drop this folder into any project or reference it from `~/.claude/skills/` or
+`~/.codex/skills/`.
 
 ---
 
@@ -41,10 +51,26 @@ each file stays useful to its audience. Engineering entries explain how the
 system changed. Product entries explain what a user, market, or roadmap signal
 means.
 
-| Skill | Output File | Primary Question | Typical Signals |
-|---|---|---|---|
-| [`engineering-journal`](./skills/engineering-journal/SKILL.md) | `docs/dev_journal.md` | What changed technically, and why? | Architecture decisions, pivots, refactors, debugging, test strategy, constraints, integrations |
-| [`product-insight-journal`](./skills/product-insight-journal/SKILL.md) | `docs/product_insights.md` | What did we learn about users, product value, or product risk? | UX friction, user pain, activation, retention, positioning, trust, roadmap, growth, feature hypotheses |
+### [`engineering-journal`](./skills/engineering-journal/SKILL.md)
+
+> A running engineering decision log. It captures what changed technically,
+> why the decision was made, what trade-offs were accepted, what evidence
+> verified the work, and what should be revisited later.
+
+| Writes To | Primary Question | Typical Signals |
+|---|---|---|
+| `docs/dev_journal.md` | What changed technically, and why? | Architecture decisions, pivots, refactors, debugging, test strategy, constraints, integrations |
+
+### [`product-insight-journal`](./skills/product-insight-journal/SKILL.md)
+
+> A running product-learning log. It captures user pain, UX friction,
+> positioning insights, roadmap trade-offs, trust risks, and feature
+> hypotheses that may be useful later in product reviews, pitches, case
+> studies, or roadmap decisions.
+
+| Writes To | Primary Question | Typical Signals |
+|---|---|---|
+| `docs/product_insights.md` | What did we learn about users, product value, or product risk? | UX friction, user pain, activation, retention, positioning, trust, roadmap, growth, feature hypotheses |
 
 The hook layer currently automates engineering checkpoint capture at session
 boundaries. Product insights are written by the product insight skill when the
