@@ -8,7 +8,16 @@ project or global skill directory.
 
 ## Skills in This Garden
 
-### [`journaling/`](./journaling/) — live project memory for agents
+Each top-level folder is its own self-contained skill module. Modules do not
+need to be related to each other; future research, workflow, or domain-specific
+skills can sit next to `journaling/` without sharing its hooks, docs, adapters,
+or purpose.
+
+| Module | Status | Role |
+|---|---|---|
+| [`journaling/`](./journaling/) | ✅ v2.0 | Live project memory for design, engineering, and product reasoning |
+
+### Module: [`journaling/`](./journaling/)
 
 > A zero-effort way to preserve design, engineering, and product reasoning as
 > work happens. The journaling skill gives agents a continuous live document
@@ -17,11 +26,11 @@ project or global skill directory.
 > to recover later for write-ups, mock-ups, product pitches, retrospectives,
 > and portfolio stories.
 
-| Status | Creates | Best For |
-|---|---|---|
-| ✅ v2.0 | `docs/dev_journal.md` + `docs/product_insights.md` | Remembering why choices were made, not just what code changed |
+**What it creates:** `docs/dev_journal.md` and `docs/product_insights.md`
 
-**Inside `journaling/`:**
+**Best for:** remembering why choices were made, not just what changed.
+
+**Internal skills:**
 
 > **[`engineering-journal`](./journaling/skills/engineering-journal/SKILL.md)**
 > writes to `docs/dev_journal.md` and captures architecture decisions,
@@ -35,7 +44,8 @@ project or global skill directory.
 
 ```mermaid
 flowchart LR
-  Garden["agent-skills-garden"] --> Journaling["journaling/"]
+  Garden["agent-skills-garden"] --> Journaling["journaling/<br/>live project memory"]
+  Garden --> Future["future skill modules<br/>independent folders"]
 
   Journaling --> Skills["skills/<br/>procedures"]
   Journaling --> Hooks["hooks/<br/>lifecycle automation"]

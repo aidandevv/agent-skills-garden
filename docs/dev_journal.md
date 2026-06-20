@@ -65,3 +65,20 @@
 > — see [PI-POSITIONING] | 2026-06-20: Journaling Should Read Like a Live Memory Layer.
 
 ---
+
+### [CP-MILESTONE] | 2026-06-20: Root README Reframed as Modular Skill Garden
+
+**Summary:** Updated the root README so `agent-skills-garden` reads as a collection of independent top-level skill modules, with `journaling/` presented as one self-contained module and its engineering/product skills nested underneath.
+
+**Files/Modules Affected:** `README.md`, `docs/dev_journal.md`, `docs/product_insights.md`.
+
+**Key Trade-off:** Kept the strong journaling abstract while adding enough garden-level structure that future unrelated skills can be added without making journaling feel like the whole repository.
+
+**Evidence:** Reviewed the first screen of `README.md`, checked the diff, and ran `git diff --check`.
+
+**Follow-ups:** None identified.
+
+> **[CROSS-LOG]** Product-facing modularity change logged in `./docs/product_insights.md`
+> — see [PI-POSITIONING] | 2026-06-20: Garden README Needs Modular Skill Blocks.
+
+---

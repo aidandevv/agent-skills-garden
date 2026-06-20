@@ -43,3 +43,23 @@
 > — see [CP-MILESTONE] | 2026-06-20: README Skill Presentation Shifted to Abstract Blocks.
 
 ---
+
+### [PI-POSITIONING] | 2026-06-20: Garden README Needs Modular Skill Blocks
+
+**Observation:**
+- The root README should make clear that `agent-skills-garden` is a collection of independent skill modules, not a repo only about journaling.
+
+**Why It Matters:**
+- As more unrelated skills are added, readers need to understand that each top-level folder is self-contained. `journaling/` can have its own internal engineering and product skills without setting the structure for every future module.
+
+**Evidence:**
+- **Source:** User feedback during README structure polish.
+- **Strength:** Medium
+
+**Hypothesis / Next Step:**
+- If the README starts with a garden-level module table and then presents `journaling/` as one self-contained module block, future skills can be added cleanly without confusing the repo's architecture or portfolio story.
+
+> **[CROSS-LOG]** Engineering documentation change logged in `./docs/dev_journal.md`
+> — see [CP-MILESTONE] | 2026-06-20: Root README Reframed as Modular Skill Garden.
+
+---
